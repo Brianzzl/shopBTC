@@ -8,8 +8,8 @@ const products = [
     category: 'Electronics',
     price: 89.99,
     countInStock: 3,
-    rating: 0,
-    numReviews: 0,
+    rating: 1,
+    numReviews: 4,
   },
   {
     name: 'iPhone 11 Pro 256GB Memory',
@@ -20,8 +20,8 @@ const products = [
     category: 'Electronics',
     price: 599.99,
     countInStock: 10,
-    rating: 0,
-    numReviews: 0,
+    rating: 2,
+    numReviews: 4,
   },
   {
     name: 'Cannon EOS 80D DSLR Camera',
@@ -32,8 +32,8 @@ const products = [
     category: 'Electronics',
     price: 929.99,
     countInStock: 0,
-    rating: 0,
-    numReviews: 0,
+    rating: 3.5,
+    numReviews: 6,
   },
   {
     name: 'Sony Playstation 4 Pro White Version',
@@ -44,8 +44,8 @@ const products = [
     category: 'Electronics',
     price: 399.99,
     countInStock: 10,
-    rating: 0,
-    numReviews: 0,
+    rating: 1.3,
+    numReviews: 9,
   },
   {
     name: 'Logitech G-Series Gaming Mouse',
