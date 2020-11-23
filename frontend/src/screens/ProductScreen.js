@@ -1,35 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Row,
-  Col,
-  Image,
-  ListGroup,
-  Card,
-  Button,
-  Form,
-} from 'react-bootstrap';
-import Rating from '../components/Rating';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
+import Rating from '../components/Rating'
+import { Link } from 'react-router-dom'
 
-import { useDispatch, useSelector } from 'react-redux';
-import { listProductDetails } from '../actions/productActions';
-import Message from '../components/Message';
-import Loader from '../components/Loader';
+import { useDispatch, useSelector } from 'react-redux'
+import { listProductDetails } from '../actions/productActions'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
 
 const ProductScreen = ({ history, match }) => {
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState(1)
 
-  const dispatch = useDispatch();
-  const productDetail = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetail;
+  const dispatch = useDispatch()
+  const productDetail = useSelector((state) => state.productDetails)
+  const { loading, error, product } = productDetail
 
   useEffect(() => {
-    dispatch(listProductDetails(match.params.id));
-  }, [dispatch, match]);
+    dispatch(listProductDetails(match.params.id))
+  }, [dispatch, match])
 
   const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?qty=${qty}`);
-  };
+    history.push(`/cart/${match.params.id}?qty=${qty}`)
+  }
   return (
     <>
       <Link className='btn btn-light my-3' to='/'>
@@ -55,7 +47,7 @@ const ProductScreen = ({ history, match }) => {
                   value={product.rating}
                   text={`${product.numReviews} reviews`}></Rating>
               </ListGroup.Item>
-              <ListGroup.Item>Price:${product.price}</ListGroup.Item>
+              <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
               <ListGroup.Item>Description:{product.description}</ListGroup.Item>
             </ListGroup>
           </Col>
@@ -114,7 +106,7 @@ const ProductScreen = ({ history, match }) => {
         </Row>
       )}
     </>
-  );
-};
+  )
+}
 
-export default ProductScreen;
+export default ProductScreen
